@@ -1,0 +1,41 @@
+body
+{
+	margin: 0;
+	background-color: #fff;	
+}
+
+body div#gameArea div#viewport
+{
+	position: fixed;
+	width: 1280px;
+	height: 720px;
+	left: 50%;
+	top: 50%;
+	margin-left: -640px;
+	margin-top: -360px;
+	z-index: 0;
+}
+
+body div#gameArea div#gui
+{
+	position: fixed;
+	width: 1280px;
+	height: 720px;
+	left: 50%;
+	top: 50%;
+	margin-left: -640px;
+	margin-top: -360px;
+	z-index: 1;
+}
+
+body div#gameArea div#loadScreen
+{
+	position: fixed;
+	width: 1280px;
+	height: 720px;
+	left: 50%;
+	top: 50%;
+	margin-left: -640px;
+	margin-top: -360px;
+	z-index: 2;
+}
