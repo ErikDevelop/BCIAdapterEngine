@@ -24,11 +24,11 @@ AdapterEngine.Game = function(width, height, scenesArray, startSceneIndex)
 	{
 		Physijs.scripts.worker = 'js/lib/physijs_worker.js';
 		Physijs.scripts.ammo = 'ammo.js';
-	
-		this.viewport = $('#viewport');
+		
+		this.viewport = document.getElementById('viewport');
 		this.renderer = new THREE.WebGLRenderer();
 		this.renderer.setSize(this.appWidth, this.appHeight);
-		this.viewport.append(this.renderer.domElement );
+		this.viewport.appendChild(this.renderer.domElement );
 		
 		this.controlsHandler = new AdapterEngine.ControlsHandler();
 		this.controlsHandler.init();
@@ -56,8 +56,8 @@ AdapterEngine.Game = function(width, height, scenesArray, startSceneIndex)
 	
 	this.setScene = function(scene)
 	{
-		$('#gui').empty();
-		$('#loadScreen').empty();
+		document.getElementById('gui').innerHTML = '';
+		document.getElementById('loadScreen').innerHTML = '';
 		
 		
 		this.currentLevel = this.scenes[scene];
@@ -135,12 +135,12 @@ AdapterEngine.Scene = function(width, height, physics)
 	
 	this.preload = function()
 	{
-		this.loadScreen = $('#loadScreen');
+		this.loadScreen = document.getElementById('loadScreen');
 		this.loadScreenImage = new Image();
 		this.loadScreenImage.src = this.loadScreenSource;
 		this.loadScreenImage.onload = function()
 		{
-			sceneSelf.loadScreen.append(sceneSelf.loadScreenImage);
+			sceneSelf.loadScreen.appendChild(sceneSelf.loadScreenImage);
 			sceneSelf.loadTextures(0);
 		}
 	}
